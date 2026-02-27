@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guto | Corretor de Imóveis | Zona Portuária RJ</title>
+    <meta name="description" content="Encontre o imóvel dos seus sonhos com Guto. Corretor de imóveis especializado na Zona Portuária do Rio de Janeiro. Atendimento personalizado e transparente.">
+    <meta name="keywords" content="corretor de imóveis, imóveis zona portuária, compra de imóvel, venda de imóvel, Guto corretor, residencial pixinguinha">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS (Tailwind) -->
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="bg-off-white text-marrom-black font-montserrat antialiased">
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-6">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        <div id="nav-logo" class="flex items-center text-white transition-colors duration-500">
+          <span class="text-2xl font-playfair font-bold tracking-tighter">
+            GUTO <span class="font-light mx-2">|</span> <span class="text-sm uppercase tracking-widest font-montserrat">Corretor de Imóveis</span>
+          </span>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#imoveis" class="nav-text text-white text-sm font-medium tracking-wide hover:text-marrom-dourado transition-colors">Imóveis</a>
+          <a href="#sobre" class="nav-text text-white text-sm font-medium tracking-wide hover:text-marrom-dourado transition-colors">Sobre Guto</a>
+          <a href="#contato" class="nav-text text-white text-sm font-medium tracking-wide hover:text-marrom-dourado transition-colors">Contato</a>
+          <a id="nav-btn" href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer" class="bg-white text-marrom-escuro px-6 py-2 rounded-sm text-sm font-semibold transition-all duration-300 hover:bg-bege-elegante">
+            Conversar com Guto
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button id="menu-btn" class="md:hidden text-white">
+          <i id="menu-icon" data-lucide="menu"></i>
+          <i id="close-icon" data-lucide="x" class="hidden"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-off-white border-b border-marrom-medio/10 overflow-hidden">
+        <div class="flex flex-col p-6 space-y-4">
+          <a href="#imoveis" class="mobile-link text-marrom-escuro text-lg font-medium">Imóveis</a>
+          <a href="#sobre" class="mobile-link text-marrom-escuro text-lg font-medium">Sobre Guto</a>
+          <a href="#contato" class="mobile-link text-marrom-escuro text-lg font-medium">Contato</a>
+          <a href="https://wa.me/5521986801687" class="bg-marrom-escuro text-bege-elegante px-6 py-3 rounded-sm text-center font-semibold">
+            Conversar com Guto
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img src="https://cury.net/storage/imoveis/pixinguinha/banner-desktop.webp" alt="Residencial Pixinguinha" class="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" fetchpriority="high" width="1920" height="1080">
+        <div class="absolute inset-0 bg-marrom-black/60"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+        <div class="max-w-2xl">
+          <span class="text-marrom-dourado uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Exclusividade na Zona Portuária</span>
+          <h1 class="text-4xl md:text-7xl text-white font-playfair leading-tight mb-6">Encontre o Imóvel dos Seus Sonhos com Guto</h1>
+          <p class="text-bege-elegante/80 text-base md:text-xl font-light mb-10 leading-relaxed">Experiência e expertise na região portuária do Rio de Janeiro. Transformando buscas em conquistas com o carisma carioca.</p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contato" class="btn-primary flex items-center justify-center gap-2">Agendar Visita <i data-lucide="arrow-right" size="18"></i></a>
+            <a href="#imoveis" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-sm font-medium hover:bg-white/20 transition-all text-center">Ver Imóveis Disponíveis</a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 animate-bounce">
+        <span class="text-[10px] uppercase tracking-widest">Scroll</span>
+        <div class="w-[1px] h-12 bg-white/20 relative">
+          <div class="absolute top-0 left-0 w-full h-1/2 bg-marrom-dourado"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-marrom-escuro py-16">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">150+</div>
+            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Imóveis Vendidos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">12</div>
+            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Anos de Experiência</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">500+</div>
+            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Clientes Atendidos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">98%</div>
+            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Satisfação</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section class="section-padding bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Por que escolher o Guto?</span>
+          <h2 class="text-4xl md:text-5xl text-marrom-escuro mb-6">Diferenciais que Fazem a Diferença</h2>
+          <div class="w-24 h-1 bg-marrom-dourado mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
+            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="users" size="32"></i></div>
+            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Atendimento Personalizado</h3>
+            <p class="text-marrom-black/70 text-sm leading-relaxed">Cada cliente é único, cada busca é especial. Entendo suas necessidades reais.</p>
+          </div>
+          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
+            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="map-pin" size="32"></i></div>
+            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Expertise Regional</h3>
+            <p class="text-marrom-black/70 text-sm leading-relaxed">Conhecimento profundo da Zona Portuária e suas oportunidades de valorização.</p>
+          </div>
+          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
+            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="shield-check" size="32"></i></div>
+            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Transparência Total</h3>
+            <p class="text-marrom-black/70 text-sm leading-relaxed">Negociações claras do início ao fim, sem letras miúdas ou surpresas.</p>
+          </div>
+          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
+            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="clock" size="32"></i></div>
+            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Suporte Completo</h3>
+            <p class="text-marrom-black/70 text-sm leading-relaxed">Acompanhamento em todas as etapas, do financiamento à entrega das chaves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="imoveis" class="section-padding bg-off-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Oportunidades</span>
+            <h2 class="text-4xl md:text-5xl text-marrom-escuro">Imóveis em Destaque</h2>
+          </div>
+          <a href="#contato" class="text-marrom-escuro font-semibold flex items-center gap-2 hover:text-marrom-dourado transition-colors group">
+            Ver catálogo completo <i data-lucide="chevron-right" size="20" class="group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
+            <div class="relative h-64 overflow-hidden">
+              <img src="https://cury.net/storage/imoveis/pixinguinha/galeria/pixinguinha-fachada.webp" alt="Residencial Pixinguinha" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" width="800" height="600">
+              <div class="absolute top-4 left-4 bg-marrom-escuro text-bege-elegante text-[10px] uppercase tracking-widest px-3 py-1">Destaque</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-1 text-marrom-medio mb-2"><i data-lucide="map-pin" size="14"></i><span class="text-xs uppercase tracking-wider font-medium">Porto Maravilha, RJ</span></div>
+              <h3 class="text-2xl text-marrom-escuro mb-2">Residencial Pixinguinha</h3>
+              <p class="text-marrom-black/60 text-sm mb-4">1 e 2 Quartos | Lazer Completo</p>
+              <div class="flex justify-between items-center pt-4 border-t border-marrom-medio/10">
+                <span class="text-marrom-escuro font-bold">A partir de R$ 280.000</span>
+                <button class="text-marrom-medio font-semibold text-sm hover:text-marrom-escuro transition-colors">Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
+            <div class="relative h-64 overflow-hidden">
+              <img src="https://cury.net/storage/imoveis/pixinguinha/galeria/pixinguinha-piscina.webp" alt="Apartamento Vista Mar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" width="800" height="600">
+              <div class="absolute top-4 left-4 bg-marrom-escuro text-bege-elegante text-[10px] uppercase tracking-widest px-3 py-1">Destaque</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-1 text-marrom-medio mb-2"><i data-lucide="map-pin" size="14"></i><span class="text-xs uppercase tracking-wider font-medium">Zona Portuária, RJ</span></div>
+              <h3 class="text-2xl text-marrom-escuro mb-2">Apartamento Vista Mar</h3>
+              <p class="text-marrom-black/60 text-sm mb-4">2 Quartos | Suíte | Varanda</p>
+              <div class="flex justify-between items-center pt-4 border-t border-marrom-medio/10">
+                <span class="text-marrom-escuro font-bold">R$ 450.000</span>
+                <button class="text-marrom-medio font-semibold text-sm hover:text-marrom-escuro transition-colors">Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
+            <div class="relative h-64 overflow-hidden">
+              <img src="https://cury.net/storage/imoveis/pixinguinha/galeria/pixinguinha-sala.webp" alt="Studio Moderno" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" width="800" height="600">
+              <div class="absolute top-4 left-4 bg-marrom-escuro text-bege-elegante text-[10px] uppercase tracking-widest px-3 py-1">Destaque</div>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-1 text-marrom-medio mb-2"><i data-lucide="map-pin" size="14"></i><span class="text-xs uppercase tracking-wider font-medium">Santo Cristo, RJ</span></div>
+              <h3 class="text-2xl text-marrom-escuro mb-2">Studio Moderno</h3>
+              <p class="text-marrom-black/60 text-sm mb-4">Studio | Mobiliado | Próximo ao VLT</p>
+              <div class="flex justify-between items-center pt-4 border-t border-marrom-medio/10">
+                <span class="text-marrom-escuro font-bold">R$ 320.000</span>
+                <button class="text-marrom-medio font-semibold text-sm hover:text-marrom-escuro transition-colors">Ver Detalhes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="section-padding bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div class="relative px-4 md:px-0">
+            <div class="aspect-[4/5] md:aspect-[3/4] rounded-sm overflow-hidden relative z-10 shadow-2xl">
+              <img src="./foto_guto/file.jpeg" alt="Guto Corretor" class="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" width="600" height="800">
+            </div>
+            <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-marrom-dourado z-0"></div>
+            <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-marrom-escuro z-0"></div>
+            <div class="absolute top-1/2 -right-10 w-20 h-40 bg-bege-elegante -z-10"></div>
+          </div>
+          <div class="mt-8 md:mt-0">
+            <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Quem é o Guto?</span>
+            <h2 class="text-3xl md:text-5xl text-marrom-escuro mb-8 leading-tight">Olá, sou o Guto. <br /><span class="text-marrom-dourado italic font-cormorant">Seu parceiro no Rio.</span></h2>
+            <div class="space-y-6 text-marrom-black/80 leading-relaxed">
+              <p>Carioca da gema, proativo e sempre com um sorriso no rosto, trago a alegria do Rio de Janeiro para o mercado imobiliário. Minha missão é mais do que vender paredes; é realizar sonhos e encontrar o lugar onde você criará suas melhores memórias.</p>
+              <p>Com mais de 12 anos de experiência na Zona Portuária, acompanhei de perto toda a revitalização do Porto Maravilha. Conheço cada rua, cada empreendimento e, principalmente, o potencial de valorização desta região que não para de crescer.</p>
+              <p class="font-semibold text-marrom-escuro">"Meu compromisso é com a sua satisfação e com uma negociação transparente, leve e eficiente."</p>
+            </div>
+            <div class="mt-10 flex flex-wrap gap-6">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-bege-elegante flex items-center justify-center text-marrom-escuro"><i data-lucide="award" size={24}></i></div>
+                <div><div class="text-sm font-bold">CRECI</div><div class="text-xs text-marrom-black/60">RJ-012345/O</div></div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-bege-elegante flex items-center justify-center text-marrom-escuro"><i data-lucide="check-circle-2" size={24}></i></div>
+                <div><div class="text-sm font-bold">Certificação</div><div class="text-xs text-marrom-black/60">Especialista Porto</div></div>
+              </div>
+            </div>
+            <div class="mt-12"><a href="#contato" class="btn-primary">Agendar Reunião</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-off-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Depoimentos</span>
+          <h2 class="text-4xl md:text-5xl text-marrom-escuro mb-6">O que dizem os clientes</h2>
+          <div class="w-24 h-1 bg-marrom-dourado mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-8 rounded-sm shadow-sm relative">
+            <div class="flex gap-1 mb-6 text-marrom-dourado"><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i></div>
+            <p class="text-marrom-black/80 italic mb-8 leading-relaxed">"O Guto foi excepcional. Encontrou exatamente o que eu buscava no Pixinguinha e me ajudou em todo o processo burocrático com uma paciência e alegria admiráveis."</p>
+            <div><div class="font-bold text-marrom-escuro">Ricardo Santos</div><div class="text-xs text-marrom-black/50 uppercase tracking-widest">Rio de Janeiro, RJ</div></div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-8 rounded-sm shadow-sm relative">
+            <div class="flex gap-1 mb-6 text-marrom-dourado"><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i></div>
+            <p class="text-marrom-black/80 italic mb-8 leading-relaxed">"Comprei meu imóvel para investimento na Zona Portuária totalmente à distância com o suporte do Guto. Transparência total e muita segurança na negociação."</p>
+            <div><div class="font-bold text-marrom-escuro">Mariana Lima</div><div class="text-xs text-marrom-black/50 uppercase tracking-widest">São Paulo, SP</div></div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-8 rounded-sm shadow-sm relative">
+            <div class="flex gap-1 mb-6 text-marrom-dourado"><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i></div>
+            <p class="text-marrom-black/80 italic mb-8 leading-relaxed">"Atendimento nota 1000! O Guto conhece a região como ninguém. Se você quer comprar no Porto, ele é o cara certo."</p>
+            <div><div class="font-bold text-marrom-escuro">Carlos Eduardo</div><div class="text-xs text-marrom-black/50 uppercase tracking-widest">Niterói, RJ</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-white">
+      <div class="grid md:grid-cols-2">
+        <div class="section-padding flex flex-col justify-center order-2 md:order-1">
+          <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Localização</span>
+          <h2 class="text-3xl md:text-5xl text-marrom-escuro mb-8">No Coração da Revitalização</h2>
+          <p class="text-marrom-black/70 mb-8 leading-relaxed">A Zona Portuária do Rio de Janeiro é hoje o principal polo de investimento imobiliário da cidade. Com o Porto Maravilha, a região ganhou infraestrutura moderna, museus, VLT e uma nova orla.</p>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Próximo ao Museu do Amanhã e AquaRio</span></li>
+            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Acesso facilitado via VLT e Rodoviária</span></li>
+            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Região com maior potencial de valorização</span></li>
+            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Infraestrutura completa de lazer e serviços</span></li>
+          </ul>
+        </div>
+        <div class="h-80 md:h-auto bg-marrom-medio/10 relative overflow-hidden order-1 md:order-2">
+          <div class="absolute inset-0 flex items-center justify-center z-10">
+             <div class="text-center p-12">
+                <i data-lucide="map-pin" size="48" class="text-marrom-escuro mx-auto mb-4"></i>
+                <p class="text-marrom-escuro font-bold">Zona Portuária, Rio de Janeiro - RJ</p>
+             </div>
+          </div>
+          <img src="https://picsum.photos/seed/rio-map/1000/1000?blur=2" alt="Mapa Rio" class="w-full h-full object-cover opacity-30" referrerPolicy="no-referrer" loading="lazy" width="1000" height="1000">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="section-padding bg-bege-elegante">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Contato</span>
+            <h2 class="text-3xl md:text-5xl text-marrom-escuro mb-8">Vamos Conversar?</h2>
+            <p class="text-marrom-black/70 mb-10 leading-relaxed max-w-md">Estou pronto para te ajudar a encontrar o imóvel ideal ou tirar qualquer dúvida sobre a região portuária. Escolha o melhor canal para você.</p>
+            <div class="space-y-8">
+              <div class="flex items-center gap-6 group">
+                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-marrom-escuro shadow-sm group-hover:bg-marrom-escuro group-hover:text-white transition-all"><i data-lucide="phone"></i></div>
+                <div><div class="text-xs text-marrom-black/50 uppercase tracking-widest font-bold mb-1">Telefone</div><div class="text-xl font-medium text-marrom-escuro">+55 21 98680-1687</div></div>
+              </div>
+              <div class="flex items-center gap-6 group">
+                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-marrom-escuro shadow-sm group-hover:bg-marrom-escuro group-hover:text-white transition-all"><i data-lucide="mail"></i></div>
+                <div><div class="text-xs text-marrom-black/50 uppercase tracking-widest font-bold mb-1">E-mail</div><div class="text-xl font-medium text-marrom-escuro">contato@gutocorretor.com.br</div></div>
+              </div>
+              <div class="flex items-center gap-6 group">
+                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-marrom-escuro shadow-sm group-hover:bg-marrom-escuro group-hover:text-white transition-all"><i data-lucide="message-circle"></i></div>
+                <div><div class="text-xs text-marrom-black/50 uppercase tracking-widest font-bold mb-1">WhatsApp</div><a href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer" class="text-xl font-medium text-marrom-escuro hover:text-marrom-medio transition-colors">Chamar no Direct</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 md:p-10 rounded-sm shadow-xl">
+            <form id="contact-form" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Nome Completo</label>
+                  <input type="text" required class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors" placeholder="Seu nome">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">E-mail</label>
+                  <input type="email" required class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors" placeholder="Seu e-mail">
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Telefone</label>
+                  <input type="tel" required class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors" placeholder="(21) 99999-9999">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Interesse</label>
+                  <select class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors bg-transparent">
+                    <option value="Compra">Compra</option>
+                    <option value="Venda">Venda</option>
+                    <option value="Investimento">Investimento</option>
+                    <option value="Dúvidas">Dúvidas</option>
+                  </select>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Mensagem</label>
+                <textarea rows="4" class="w-full border border-marrom-medio/20 p-4 focus:border-marrom-escuro outline-none transition-colors resize-none" placeholder="Como posso te ajudar?"></textarea>
+              </div>
+              <button type="submit" class="w-full btn-primary py-4 mt-4">Enviar Mensagem para Guto</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-marrom-black text-bege-elegante pt-20 pb-10">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+          <div class="col-span-1 md:col-span-1">
+            <div class="text-2xl font-playfair font-bold tracking-tighter mb-6">GUTO <span class="font-light mx-2">|</span> <span class="text-sm uppercase tracking-widest font-montserrat">Corretor</span></div>
+            <p class="text-bege-elegante/50 text-sm leading-relaxed mb-8">Especialista em realizar sonhos na Zona Portuária do Rio de Janeiro. Atendimento com carisma, expertise e transparência.</p>
+            <div class="flex gap-4">
+              <a href="#" class="w-10 h-10 rounded-full border border-bege-elegante/20 flex items-center justify-center hover:bg-marrom-dourado hover:border-marrom-dourado transition-all"><i data-lucide="instagram" size="18"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-bege-elegante/20 flex items-center justify-center hover:bg-marrom-dourado hover:border-marrom-dourado transition-all"><i data-lucide="linkedin" size="18"></i></a>
+              <a href="#" class="w-10 h-10 rounded-full border border-bege-elegante/20 flex items-center justify-center hover:bg-marrom-dourado hover:border-marrom-dourado transition-all"><i data-lucide="phone" size="18"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-lg font-playfair mb-6">Links Rápidos</h4>
+            <ul class="space-y-4 text-sm text-bege-elegante/60">
+              <li><a href="#" class="hover:text-marrom-dourado transition-colors">Home</a></li>
+              <li><a href="#imoveis" class="hover:text-marrom-dourado transition-colors">Imóveis</a></li>
+              <li><a href="#sobre" class="hover:text-marrom-dourado transition-colors">Sobre Guto</a></li>
+              <li><a href="#contato" class="hover:text-marrom-dourado transition-colors">Contato</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-playfair mb-6">Contatos</h4>
+            <ul class="space-y-4 text-sm text-bege-elegante/60">
+              <li class="flex items-center gap-3"><i data-lucide="phone" size="16" class="text-marrom-dourado"></i><span>+55 21 98680-1687</span></li>
+              <li class="flex items-center gap-3"><i data-lucide="mail" size="16" class="text-marrom-dourado"></i><span>contato@gutocorretor.com.br</span></li>
+              <li class="flex items-center gap-3"><i data-lucide="map-pin" size="16" class="text-marrom-dourado"></i><span>Zona Portuária, Rio de Janeiro - RJ</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-playfair mb-6">Newsletter</h4>
+            <p class="text-sm text-bege-elegante/60 mb-4">Receba as melhores oportunidades do Porto no seu e-mail.</p>
+            <div class="flex">
+              <input type="email" placeholder="Seu e-mail" class="bg-white/5 border border-white/10 px-4 py-2 text-sm outline-none focus:border-marrom-dourado w-full">
+              <button class="bg-marrom-dourado text-marrom-black px-4 py-2 hover:bg-bege-elegante transition-all"><i data-lucide="chevron-right" size="20"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-bege-elegante/30">
+          <div>CRECI: RJ-012345/O</div>
+          <div>© 2024 Guto Corretor de Imóveis. Todos os direitos reservados.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-40 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#128C7E] transition-all hover:scale-110">
+      <i data-lucide="message-circle" size="32"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+    </script>
+    <script src="/src/script.js"></script>
+  </body>
+</html>
+

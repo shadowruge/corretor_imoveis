@@ -1,0 +1,7 @@
+{
+  "name": "Guto | Corretor de Imóveis",
+  "description": "Landing page de alta conversão para o corretor de imóveis Guto, especializado na Zona Portuária do Rio de Janeiro.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

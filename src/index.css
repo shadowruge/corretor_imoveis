@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-marrom-escuro: #4A3728;
+  --color-marrom-medio: #8B7355;
+  --color-marrom-dourado: #C4A77D;
+  --color-bege-elegante: #F5F0EB;
+  --color-marrom-black: #2D2319;
+  --color-off-white: #FAF8F5;
+  --color-branco-puro: #FFFFFF;
+
+  --font-playfair: "Playfair Display", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-lato: "Lato", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+
+  --shadow-card: 0 4px 20px rgba(74, 55, 40, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-off-white text-marrom-black font-montserrat antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+.glass-header {
+  @apply bg-off-white/80 backdrop-blur-md border-b border-marrom-medio/10;
+}
+
+.btn-primary {
+  @apply bg-marrom-escuro text-bege-elegante px-8 py-3 rounded-sm font-medium transition-all duration-300 hover:bg-marrom-medio hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply border border-marrom-escuro text-marrom-escuro px-8 py-3 rounded-sm font-medium transition-all duration-300 hover:bg-marrom-escuro hover:text-bege-elegante;
+}
+
+.section-padding {
+  @apply py-12 md:py-20 px-6 md:px-12 lg:px-24;
+}
+
+.card-hover {
+  @apply transition-transform duration-300 hover:-translate-y-2 hover:shadow-card;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-off-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-marrom-medio/30 rounded-full hover:bg-marrom-medio/50;
+}
