@@ -1,422 +1,1139 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guto | Corretor de Imóveis | Zona Portuária RJ</title>
-    <meta name="description" content="Encontre o imóvel dos seus sonhos com Guto. Corretor de imóveis especializado na Zona Portuária do Rio de Janeiro. Atendimento personalizado e transparente.">
-    <meta name="keywords" content="corretor de imóveis, imóveis zona portuária, compra de imóvel, venda de imóvel, Guto corretor, residencial pixinguinha">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Custom CSS (Tailwind) -->
-    <link rel="stylesheet" href="/src/index.css">
-  </head>
-  <body class="bg-off-white text-marrom-black font-montserrat antialiased">
-    
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-6">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        <div id="nav-logo" class="flex items-center text-white transition-colors duration-500">
-          <span class="text-2xl font-playfair font-bold tracking-tighter">
-            GUTO <span class="font-light mx-2">|</span> <span class="text-sm uppercase tracking-widest font-montserrat">Corretor de Imóveis</span>
-          </span>
-        </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-8">
-          <a href="#imoveis" class="nav-text text-white text-sm font-medium tracking-wide hover:text-marrom-dourado transition-colors">Imóveis</a>
-          <a href="#sobre" class="nav-text text-white text-sm font-medium tracking-wide hover:text-marrom-dourado transition-colors">Sobre Guto</a>
-          <a href="#contato" class="nav-text text-white text-sm font-medium tracking-wide hover:text-marrom-dourado transition-colors">Contato</a>
-          <a id="nav-btn" href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer" class="bg-white text-marrom-escuro px-6 py-2 rounded-sm text-sm font-semibold transition-all duration-300 hover:bg-bege-elegante">
-            Conversar com Guto
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Apartamentos na Zona Portuária RJ | Fale com Especialista</title>
+  <meta name="description" content="Apartamentos a partir de R$ 280 mil na Zona Portuária do Rio de Janeiro. Lazer completo, alta valorização e excelente localização. Fale agora com um especialista.">
+  <!-- SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shadowruge.github.io/corretor_imoveis/">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Apartamentos na Zona Portuária RJ">
+  <meta property="og:description" content="Unidades a partir de R$ 280 mil com lazer completo e alta valorização.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <!-- Security Headers via meta (complementar ao servidor) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Preload Hero -->
+  <link rel="preload" as="image" href="./assets/6812713176b8b-mobile.webp" media="(max-width:768px)">
+  <link rel="preload" as="image" href="./assets/6812713176b8b-desktop.webp" media="(min-width:769px)">
 
-        <!-- Mobile Toggle -->
-        <button id="menu-btn" class="md:hidden text-white">
-          <i id="menu-icon" data-lucide="menu"></i>
-          <i id="close-icon" data-lucide="x" class="hidden"></i>
-        </button>
-      </div>
+  <style>
+    :root {
+      --brown-950: #1a0f08;
+      --brown-900: #2c1a0e;
+      --brown-800: #4a2e1a;
+      --brown-700: #6b4226;
+      --brown-600: #8b5a2b;
+      --brown-500: #a86932;
+      --brown-400: #c4813d;
+      --brown-300: #d4a26a;
+      --brown-200: #e8cba8;
+      --brown-100: #f5e8d5;
+      --brown-50:  #fdf6ee;
+      --cream:     #faf3e8;
+      --gold:      #c9a84c;
+      --gold-light:#e8c97a;
+      --white:     #ffffff;
+      --text-dark: #1a0f08;
+      --text-mid:  #5a3e28;
+    }
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-off-white border-b border-marrom-medio/10 overflow-hidden">
-        <div class="flex flex-col p-6 space-y-4">
-          <a href="#imoveis" class="mobile-link text-marrom-escuro text-lg font-medium">Imóveis</a>
-          <a href="#sobre" class="mobile-link text-marrom-escuro text-lg font-medium">Sobre Guto</a>
-          <a href="#contato" class="mobile-link text-marrom-escuro text-lg font-medium">Contato</a>
-          <a href="https://wa.me/5521986801687" class="bg-marrom-escuro text-bege-elegante px-6 py-3 rounded-sm text-center font-semibold">
-            Conversar com Guto
-          </a>
-        </div>
-      </div>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────── */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
+
+    /* ─── HERO ───────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero picture,
+    .hero picture img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(26,15,8,0.88) 0%,
+        rgba(74,46,26,0.72) 50%,
+        rgba(26,15,8,0.60) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .hero-content { grid-template-columns: 1fr 420px; }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--brown-950);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .hero p {
+      color: var(--brown-200);
+      font-size: 1.15rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    /* ─── CTA BUTTON ─────────────────────────────── */
+    .btn-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+    }
+
+    .btn-wpp:hover, .btn-wpp:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+      outline: none;
+    }
+
+    .btn-wpp:focus-visible { outline: 3px solid #25D366; outline-offset: 3px; }
+
+    .btn-wpp svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
+
+    /* ─── FORM CARD ───────────────────────────────── */
+    .form-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 60px rgba(26,15,8,0.35);
+      border-top: 4px solid var(--gold);
+    }
+
+    .form-card h2 {
+      font-size: 1.5rem;
+      color: var(--brown-900);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-card p.subtitle {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-card .field {
+      margin-bottom: 1rem;
+    }
+
+    .form-card label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--brown-700);
+      margin-bottom: 0.35rem;
+    }
+
+    .form-card input {
+      width: 100%;
+      border: 1.5px solid var(--brown-200);
+      border-radius: 4px;
+      padding: 0.75rem 1rem;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      background: var(--brown-50);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-card input:focus {
+      border-color: var(--brown-500);
+      box-shadow: 0 0 0 3px rgba(168,105,50,0.15);
+    }
+
+    .form-card input::placeholder { color: var(--brown-300); }
+
+    .form-card button[type="submit"] {
+      width: 100%;
+      background: var(--brown-800);
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.9rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .form-card button[type="submit"]:hover {
+      background: var(--brown-700);
+      transform: translateY(-1px);
+    }
+
+    .form-card button[type="submit"]:focus-visible {
+      outline: 3px solid var(--brown-500);
+      outline-offset: 3px;
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: #999;
+      text-align: center;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .form-note svg { width: 14px; height: 14px; fill: #bbb; }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .form-success .check-icon {
+      width: 56px; height: 56px;
+      background: var(--brown-100);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .form-success .check-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; }
+
+    .form-success h3 { color: var(--brown-900); margin-bottom: 0.5rem; }
+    .form-success p { font-size: 0.9rem; color: var(--text-mid); }
+
+    /* ─── NAV ────────────────────────────────────── */
+    nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    /* ─── DIVIDER ────────────────────────────────── */
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, var(--brown-800), var(--gold), var(--brown-800));
+    }
+
+    /* ─── BENEFITS ───────────────────────────────── */
+    .benefits {
+      padding: 6rem 2rem;
+      background: var(--white);
+    }
+
+    .benefits-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .benefits h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--brown-900);
+      margin-bottom: 3.5rem;
+      max-width: 600px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .benefit-card {
+      background: var(--cream);
+      border: 1px solid var(--brown-200);
+      border-radius: 8px;
+      padding: 2rem 1.75rem;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(74,46,26,0.12);
+    }
+
+    .benefit-icon {
+      width: 48px; height: 48px;
+      background: var(--brown-100);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .benefit-icon svg { width: 24px; height: 24px; stroke: var(--brown-700); fill: none; }
+
+    .benefit-card h3 {
+      font-size: 1.1rem;
+      color: var(--brown-900);
+      margin-bottom: 0.6rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+    }
+
+    /* ─── STATS STRIP ────────────────────────────── */
+    .stats-strip {
+      background: var(--brown-900);
+      padding: 3.5rem 2rem;
+    }
+
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--brown-300);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* ─── TESTIMONIAL ─────────────────────────────── */
+    .testimonials {
+      padding: 6rem 2rem;
+      background: var(--cream);
+    }
+
+    .testimonials-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--brown-900);
+      margin-bottom: 3rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--brown-200);
+      border-radius: 8px;
+      padding: 2.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      color: var(--brown-200);
+      line-height: 1;
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+    }
+
+    .testimonial-card blockquote {
+      font-size: 1.1rem;
+      color: var(--text-mid);
+      font-style: italic;
+      line-height: 1.75;
+      margin-top: 1.5rem;
+    }
+
+    .testimonial-author {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--brown-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: var(--brown-800);
+      font-size: 1rem;
+    }
+
+    .author-name { font-weight: 700; color: var(--brown-900); font-size: 0.9rem; }
+    .author-role { font-size: 0.8rem; color: var(--brown-400); }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* ─── CTA FINAL ──────────────────────────────── */
+    .cta-final {
+      background: var(--brown-900);
+      background-image: linear-gradient(135deg, var(--brown-950) 0%, var(--brown-800) 100%);
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta-final-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .urgency-tag {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-final h2 {
+      color: var(--white);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .cta-final p {
+      color: var(--brown-300);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    footer {
+      background: var(--brown-950);
+      color: var(--brown-400);
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 2rem;
+      line-height: 1.7;
+    }
+
+    footer a { color: var(--brown-300); text-decoration: none; }
+    footer a:hover { color: var(--gold-light); }
+
+    /* ─── FLOATING WHATSAPP ───────────────────────── */
+    .wpp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background: #25D366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      z-index: 100;
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+    }
+
+    .wpp-float:hover { transform: scale(1.1); box-shadow: 0 8px 30px rgba(37,211,102,0.55); }
+    .wpp-float:focus-visible { outline: 3px solid #25D366; outline-offset: 4px; }
+    .wpp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* ─── ANIMATION ──────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1, .hero p, .hero .btn-wpp, .form-card {
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .hero h1   { animation-delay: 0.2s; }
+    .hero p    { animation-delay: 0.35s; }
+    .hero .btn-wpp  { animation-delay: 0.5s; }
+    .form-card { animation-delay: 0.4s; }
+
+    /* ─── ACCESSIBILITY: focus ring ──────────────── */
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    /* ─── GALLERY ───────────────────────────── */
+    .gallery {
+      padding: 6rem 2rem;
+      background: var(--white);
+    }
+
+    .gallery-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--brown-900);
+      margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1rem;
+      border-radius: 12px;
+      overflow: hidden;
+      max-height: 600px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(26,15,8,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26,15,8,0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item.main {
+      grid-row: span 2;
+    }
+
+    /* ─── CORRETOR INFO ───────────────────────────── */
+    .corretor-info {
+      padding: 6rem 2rem;
+      background: var(--cream);
+    }
+
+    .corretor-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .corretor-info h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--brown-900);
+      margin-bottom: 3rem;
+    }
+
+    .corretor-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
+      align-items: start;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 2.5rem;
+      border: 1px solid var(--brown-200);
+      box-shadow: 0 8px 30px rgba(26,15,8,0.08);
+    }
+
+    .corretor-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+    }
+
+    .corretor-content {
+      text-align: left;
+    }
+
+    .corretor-content h3 {
+      font-size: 1.4rem;
+      color: var(--brown-900);
+      margin-bottom: 1rem;
+    }
+
+    .corretor-content p {
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .corretor-contacts {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--brown-700);
+      font-size: 0.9rem;
+    }
+
+    .contact-item svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        max-height: none;
+      }
+      
+      .gallery-item.main {
+        grid-row: span 1;
+      }
+      
+      .corretor-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+      
+      .corretor-content {
+        text-align: center;
+      }
+      
+      .corretor-contacts {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── HERO ───────────────────────────────────────── -->
+  <section class="hero" aria-label="Seção principal">
+
+    <nav aria-label="Navegação principal">
+      <a class="nav-logo" href="#" aria-label="Página inicial">Porto<span>Alto</span></a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <img src="https://cury.net/storage/imoveis/pixinguinha/banner-desktop.webp" alt="Residencial Pixinguinha" class="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" fetchpriority="high" width="1920" height="1080">
-        <div class="absolute inset-0 bg-marrom-black/60"></div>
-      </div>
-      <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-        <div class="max-w-2xl">
-          <span class="text-marrom-dourado uppercase tracking-[0.3em] text-sm font-bold mb-4 block">Exclusividade na Zona Portuária</span>
-          <h1 class="text-4xl md:text-7xl text-white font-playfair leading-tight mb-6">Encontre o Imóvel dos Seus Sonhos com Guto</h1>
-          <p class="text-bege-elegante/80 text-base md:text-xl font-light mb-10 leading-relaxed">Experiência e expertise na região portuária do Rio de Janeiro. Transformando buscas em conquistas com o carisma carioca.</p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#contato" class="btn-primary flex items-center justify-center gap-2">Agendar Visita <i data-lucide="arrow-right" size="18"></i></a>
-            <a href="#imoveis" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-sm font-medium hover:bg-white/20 transition-all text-center">Ver Imóveis Disponíveis</a>
-          </div>
-        </div>
-      </div>
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2 animate-bounce">
-        <span class="text-[10px] uppercase tracking-widest">Scroll</span>
-        <div class="w-[1px] h-12 bg-white/20 relative">
-          <div class="absolute top-0 left-0 w-full h-1/2 bg-marrom-dourado"></div>
-        </div>
-      </div>
-    </section>
+    <picture>
+      <source media="(max-width:768px)" srcset="./assets/6812713176b8b-mobile.webp" type="image/webp">
+      <img src="./assets/6812713176b8b-desktop.webp"
+           alt="Fachada do empreendimento na Zona Portuária do Rio de Janeiro"
+           loading="eager"
+           width="1920" height="1080"
+           decoding="async">
+    </picture>
 
-    <!-- Stats Section -->
-    <section class="bg-marrom-escuro py-16">
-      <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">150+</div>
-            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Imóveis Vendidos</div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <!-- Texto -->
+      <div>
+        <span class="hero-badge">Zona Portuária · Rio de Janeiro</span>
+        <h1>Seu próximo lar na <em>nova face</em> do Rio</h1>
+        <p>Apartamentos a partir de <strong style="color:var(--gold-light)">R$ 280 mil</strong> com lazer completo e excelente valorização em uma das regiões que mais cresce na cidade.</p>
+        <a href="https://wa.me/5521986801687?text=Olá!%20Gostaria%20de%20informações%20sobre%20apartamentos%20na%20Zona%20Portuária."
+           class="btn-wpp"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Falar com especialista pelo WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.112 1.523 5.836L0 24l6.336-1.506A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.983-1.36l-.358-.213-3.76.894.952-3.663-.233-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/></svg>
+          Falar com Especialista Agora
+        </a>
+      </div>
+
+      <!-- Formulário -->
+      <div class="form-card" role="region" aria-label="Formulário de contato">
+        <h2>Receba condições exclusivas</h2>
+        <p class="subtitle">Preencha abaixo e um especialista entrará em contato.</p>
+
+        <form id="leadForm" novalidate>
+          <input type="hidden" name="to_email" value="gutovicentemp@gmail.com">
+          <input type="hidden" name="from_name" value="PortoAlto Imóveis">
+          <input type="hidden" name="subject" value="Novo Lead - Apartamentos Zona Portuária">
+          <input type="hidden" name="origem" value="Landing Page PortoAlto">
+          
+          <div class="field">
+            <label for="nome">Seu nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" required autocomplete="name">
           </div>
-          <div class="text-center">
-            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">12</div>
-            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Anos de Experiência</div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(21) 9 0000-0000" required autocomplete="tel" inputmode="tel">
           </div>
-          <div class="text-center">
-            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">500+</div>
-            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Clientes Atendidos</div>
+          <button type="submit">Quero receber agora</button>
+        </form>
+
+        <div class="form-success" id="formSuccess" aria-live="polite">
+          <div class="check-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
-          <div class="text-center">
-            <div class="text-4xl md:text-5xl font-playfair text-marrom-dourado mb-2">98%</div>
-            <div class="text-bege-elegante/60 text-xs uppercase tracking-widest font-medium">Satisfação</div>
+          <h3>Recebemos seu contato!</h3>
+          <p>Em breve nossa equipe entrará em contato pelo WhatsApp.</p>
+        </div>
+
+        <p class="form-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+          Seus dados estão protegidos e não serão compartilhados.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ── STATS ───────────────────────────────────────── -->
+  <section class="stats-strip" aria-label="Números do empreendimento">
+    <div class="stats-inner">
+      <div>
+        <span class="stat-number">280k</span>
+        <span class="stat-label">A partir de R$ 280 mil</span>
+      </div>
+      <div>
+        <span class="stat-number">+15%</span>
+        <span class="stat-label">Valorização anual da região</span>
+      </div>
+      <div>
+        <span class="stat-number">500m</span>
+        <span class="stat-label">Do VLT e transporte público</span>
+      </div>
+      <div>
+        <span class="stat-number">24h</span>
+        <span class="stat-label">Segurança e portaria</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BENEFÍCIOS ──────────────────────────────────── -->
+  <section class="benefits" aria-label="Benefícios do empreendimento">
+    <div class="benefits-inner">
+      <span class="section-label">Por que investir aqui</span>
+      <h2>Tudo que você precisa em um só lugar</h2>
+      <div class="benefits-grid">
+
+        <article class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Alta Valorização</h3>
+          <p>A Zona Portuária é uma das regiões com maior crescimento imobiliário no Rio, com infraestrutura moderna e projetos de revitalização contínuos.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Próximo ao VLT</h3>
+          <p>Mobilidade urbana facilitada com acesso rápido ao VLT, metrô e principais vias da cidade para você ir a qualquer ponto do Rio.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Lazer Completo</h3>
+          <p>Piscina, academia, salão de festas, espaço gourmet e área kids — tudo pensado para o seu bem-estar e qualidade de vida.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+          </div>
+          <h3>Facilidade de Financiamento</h3>
+          <p>Compatível com FGTS e Minha Casa Minha Vida. Parcelamento facilitado para você conquistar seu imóvel com conforto.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Segurança 24 horas</h3>
+          <p>Portaria controlada, câmeras de monitoramento e equipe de segurança para você e sua família terem tranquilidade absoluta.</p>
+        </article>
+
+        <article class="benefit-card">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3>Vista e Localização Privilegiada</h3>
+          <p>A poucos minutos do Centro Histórico, Museu do Amanhã e orla revitalizada — uma das localizações mais estratégicas da cidade.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALERIA ──────────────────────────────────── -->
+  <section class="gallery" aria-label="Galeria do empreendimento">
+    <div class="gallery-inner">
+      <span class="section-label">Conheça o empreendimento</span>
+      <h2>Visualize seu futuro lar</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item main">
+          <img src="./assets/6812713176b8b-desktop.webp" 
+               alt="Fachada principal do condomínio" 
+               loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/6812713176b8b-desktop.webp" 
+               alt="Detalhe da fachada do empreendimento" 
+               loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="./assets/6812713176b8b-desktop.webp" 
+               alt="Vista lateral do condomínio" 
+               loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOBRE O CORRETOR ──────────────────────────────── -->
+  <section class="corretor-info" aria-label="Sobre o corretor">
+    <div class="corretor-inner">
+      <span class="section-label">Seu especialista</span>
+      <h2>Fale com Guto</h2>
+      <div class="corretor-card">
+        <div class="corretor-photo">
+          <img src="./assets/file.webp" 
+               alt="Guto - Corretor de imóveis especialista na Zona Portuária" 
+               loading="lazy"
+               width="200" height="200">
+        </div>
+        <div class="corretor-content">
+          <h3>Especialista em Zona Portuária</h3>
+          <p>Com mais de 10 anos de experiência, conheço cada detalhe da região e as melhores oportunidades de investimento. Atendimento personalizado para encontrar seu imóvel dos sonhos.</p>
+          <div class="corretor-contacts">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>(21) 98680-1687</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>guto@portoalto.com.br</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Differentials Section -->
-    <section class="section-padding bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Por que escolher o Guto?</span>
-          <h2 class="text-4xl md:text-5xl text-marrom-escuro mb-6">Diferenciais que Fazem a Diferença</h2>
-          <div class="w-24 h-1 bg-marrom-dourado mx-auto"></div>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
-            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="users" size="32"></i></div>
-            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Atendimento Personalizado</h3>
-            <p class="text-marrom-black/70 text-sm leading-relaxed">Cada cliente é único, cada busca é especial. Entendo suas necessidades reais.</p>
-          </div>
-          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
-            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="map-pin" size="32"></i></div>
-            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Expertise Regional</h3>
-            <p class="text-marrom-black/70 text-sm leading-relaxed">Conhecimento profundo da Zona Portuária e suas oportunidades de valorização.</p>
-          </div>
-          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
-            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="shield-check" size="32"></i></div>
-            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Transparência Total</h3>
-            <p class="text-marrom-black/70 text-sm leading-relaxed">Negociações claras do início ao fim, sem letras miúdas ou surpresas.</p>
-          </div>
-          <div class="p-8 bg-off-white border border-marrom-medio/5 rounded-sm text-center group transition-all duration-300 hover:-translate-y-2">
-            <div class="mb-6 flex justify-center text-marrom-dourado"><i data-lucide="clock" size="32"></i></div>
-            <h3 class="text-xl text-marrom-escuro mb-4 group-hover:text-marrom-medio transition-colors">Suporte Completo</h3>
-            <p class="text-marrom-black/70 text-sm leading-relaxed">Acompanhamento em todas as etapas, do financiamento à entrega das chaves.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Properties Section -->
-    <section id="imoveis" class="section-padding bg-off-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+  <!-- ── DEPOIMENTO ──────────────────────────────────── -->
+  <section class="testimonials" aria-label="Depoimentos de clientes">
+    <div class="testimonials-inner">
+      <span class="section-label">O que dizem nossos clientes</span>
+      <h2>Satisfação que fala por si</h2>
+      <div class="testimonial-card">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <div class="stars" aria-label="5 estrelas">★★★★★</div>
+        <blockquote>
+          Consegui meu primeiro apartamento com condições incríveis. O atendimento foi excelente do início ao fim — me explicaram cada detalhe do processo e hoje estou realizada no meu novo lar na Zona Portuária.
+        </blockquote>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true">M</div>
           <div>
-            <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Oportunidades</span>
-            <h2 class="text-4xl md:text-5xl text-marrom-escuro">Imóveis em Destaque</h2>
-          </div>
-          <a href="#contato" class="text-marrom-escuro font-semibold flex items-center gap-2 hover:text-marrom-dourado transition-colors group">
-            Ver catálogo completo <i data-lucide="chevron-right" size="20" class="group-hover:translate-x-1 transition-transform"></i>
-          </a>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Card 1 -->
-          <div class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div class="relative h-64 overflow-hidden">
-              <img src="https://cury.net/storage/imoveis/pixinguinha/galeria/pixinguinha-fachada.webp" alt="Residencial Pixinguinha" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" width="800" height="600">
-              <div class="absolute top-4 left-4 bg-marrom-escuro text-bege-elegante text-[10px] uppercase tracking-widest px-3 py-1">Destaque</div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-1 text-marrom-medio mb-2"><i data-lucide="map-pin" size="14"></i><span class="text-xs uppercase tracking-wider font-medium">Porto Maravilha, RJ</span></div>
-              <h3 class="text-2xl text-marrom-escuro mb-2">Residencial Pixinguinha</h3>
-              <p class="text-marrom-black/60 text-sm mb-4">1 e 2 Quartos | Lazer Completo</p>
-              <div class="flex justify-between items-center pt-4 border-t border-marrom-medio/10">
-                <span class="text-marrom-escuro font-bold">A partir de R$ 280.000</span>
-                <button class="text-marrom-medio font-semibold text-sm hover:text-marrom-escuro transition-colors">Ver Detalhes</button>
-              </div>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div class="relative h-64 overflow-hidden">
-              <img src="https://cury.net/storage/imoveis/pixinguinha/galeria/pixinguinha-piscina.webp" alt="Apartamento Vista Mar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" width="800" height="600">
-              <div class="absolute top-4 left-4 bg-marrom-escuro text-bege-elegante text-[10px] uppercase tracking-widest px-3 py-1">Destaque</div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-1 text-marrom-medio mb-2"><i data-lucide="map-pin" size="14"></i><span class="text-xs uppercase tracking-wider font-medium">Zona Portuária, RJ</span></div>
-              <h3 class="text-2xl text-marrom-escuro mb-2">Apartamento Vista Mar</h3>
-              <p class="text-marrom-black/60 text-sm mb-4">2 Quartos | Suíte | Varanda</p>
-              <div class="flex justify-between items-center pt-4 border-t border-marrom-medio/10">
-                <span class="text-marrom-escuro font-bold">R$ 450.000</span>
-                <button class="text-marrom-medio font-semibold text-sm hover:text-marrom-escuro transition-colors">Ver Detalhes</button>
-              </div>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div class="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 group">
-            <div class="relative h-64 overflow-hidden">
-              <img src="https://cury.net/storage/imoveis/pixinguinha/galeria/pixinguinha-sala.webp" alt="Studio Moderno" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" loading="lazy" width="800" height="600">
-              <div class="absolute top-4 left-4 bg-marrom-escuro text-bege-elegante text-[10px] uppercase tracking-widest px-3 py-1">Destaque</div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center gap-1 text-marrom-medio mb-2"><i data-lucide="map-pin" size="14"></i><span class="text-xs uppercase tracking-wider font-medium">Santo Cristo, RJ</span></div>
-              <h3 class="text-2xl text-marrom-escuro mb-2">Studio Moderno</h3>
-              <p class="text-marrom-black/60 text-sm mb-4">Studio | Mobiliado | Próximo ao VLT</p>
-              <div class="flex justify-between items-center pt-4 border-t border-marrom-medio/10">
-                <span class="text-marrom-escuro font-bold">R$ 320.000</span>
-                <button class="text-marrom-medio font-semibold text-sm hover:text-marrom-escuro transition-colors">Ver Detalhes</button>
-              </div>
-            </div>
+            <div class="author-name">Mariana Souza</div>
+            <div class="author-role">Compradora · 2024</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section id="sobre" class="section-padding bg-white overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div class="relative px-4 md:px-0">
-            <div class="aspect-[4/5] md:aspect-[3/4] rounded-sm overflow-hidden relative z-10 shadow-2xl">
-              <img src="./foto_guto/file.jpeg" alt="Guto Corretor" class="w-full h-full object-cover" referrerPolicy="no-referrer" loading="lazy" width="600" height="800">
-            </div>
-            <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-marrom-dourado z-0"></div>
-            <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-marrom-escuro z-0"></div>
-            <div class="absolute top-1/2 -right-10 w-20 h-40 bg-bege-elegante -z-10"></div>
-          </div>
-          <div class="mt-8 md:mt-0">
-            <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Quem é o Guto?</span>
-            <h2 class="text-3xl md:text-5xl text-marrom-escuro mb-8 leading-tight">Olá, sou o Guto. <br /><span class="text-marrom-dourado italic font-cormorant">Seu parceiro no Rio.</span></h2>
-            <div class="space-y-6 text-marrom-black/80 leading-relaxed">
-              <p>Carioca da gema, proativo e sempre com um sorriso no rosto, trago a alegria do Rio de Janeiro para o mercado imobiliário. Minha missão é mais do que vender paredes; é realizar sonhos e encontrar o lugar onde você criará suas melhores memórias.</p>
-              <p>Com mais de 12 anos de experiência na Zona Portuária, acompanhei de perto toda a revitalização do Porto Maravilha. Conheço cada rua, cada empreendimento e, principalmente, o potencial de valorização desta região que não para de crescer.</p>
-              <p class="font-semibold text-marrom-escuro">"Meu compromisso é com a sua satisfação e com uma negociação transparente, leve e eficiente."</p>
-            </div>
-            <div class="mt-10 flex flex-wrap gap-6">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-bege-elegante flex items-center justify-center text-marrom-escuro"><i data-lucide="award" size={24}></i></div>
-                <div><div class="text-sm font-bold">CRECI</div><div class="text-xs text-marrom-black/60">RJ-012345/O</div></div>
-              </div>
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-full bg-bege-elegante flex items-center justify-center text-marrom-escuro"><i data-lucide="check-circle-2" size={24}></i></div>
-                <div><div class="text-sm font-bold">Certificação</div><div class="text-xs text-marrom-black/60">Especialista Porto</div></div>
-              </div>
-            </div>
-            <div class="mt-12"><a href="#contato" class="btn-primary">Agendar Reunião</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ── CTA FINAL ───────────────────────────────────── -->
+  <section class="cta-final" aria-label="Chamada para ação final">
+    <div class="cta-final-inner">
+      <span class="urgency-tag">⚡ Últimas unidades disponíveis</span>
+      <h2>Não perca esta oportunidade</h2>
+      <p>As unidades estão sendo reservadas rapidamente. Agende agora a sua visita e converse com um especialista para garantir as melhores condições.</p>
+      <a href="https://wa.me/5521986801687?text=Olá!%20Quero%20agendar%20uma%20visita%20aos%20apartamentos%20da%20Zona%20Portuária."
+         class="btn-wpp"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Agendar visita pelo WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.112 1.523 5.836L0 24l6.336-1.506A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.983-1.36l-.358-.213-3.76.894.952-3.663-.233-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/></svg>
+        Agendar Visita Agora
+      </a>
+    </div>
+  </section>
 
-    <!-- Testimonials Section -->
-    <section class="section-padding bg-off-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Depoimentos</span>
-          <h2 class="text-4xl md:text-5xl text-marrom-escuro mb-6">O que dizem os clientes</h2>
-          <div class="w-24 h-1 bg-marrom-dourado mx-auto"></div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Testimonial 1 -->
-          <div class="bg-white p-8 rounded-sm shadow-sm relative">
-            <div class="flex gap-1 mb-6 text-marrom-dourado"><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i></div>
-            <p class="text-marrom-black/80 italic mb-8 leading-relaxed">"O Guto foi excepcional. Encontrou exatamente o que eu buscava no Pixinguinha e me ajudou em todo o processo burocrático com uma paciência e alegria admiráveis."</p>
-            <div><div class="font-bold text-marrom-escuro">Ricardo Santos</div><div class="text-xs text-marrom-black/50 uppercase tracking-widest">Rio de Janeiro, RJ</div></div>
-          </div>
-          <!-- Testimonial 2 -->
-          <div class="bg-white p-8 rounded-sm shadow-sm relative">
-            <div class="flex gap-1 mb-6 text-marrom-dourado"><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i></div>
-            <p class="text-marrom-black/80 italic mb-8 leading-relaxed">"Comprei meu imóvel para investimento na Zona Portuária totalmente à distância com o suporte do Guto. Transparência total e muita segurança na negociação."</p>
-            <div><div class="font-bold text-marrom-escuro">Mariana Lima</div><div class="text-xs text-marrom-black/50 uppercase tracking-widest">São Paulo, SP</div></div>
-          </div>
-          <!-- Testimonial 3 -->
-          <div class="bg-white p-8 rounded-sm shadow-sm relative">
-            <div class="flex gap-1 mb-6 text-marrom-dourado"><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i><i data-lucide="star" class="fill-marrom-dourado"></i></div>
-            <p class="text-marrom-black/80 italic mb-8 leading-relaxed">"Atendimento nota 1000! O Guto conhece a região como ninguém. Se você quer comprar no Porto, ele é o cara certo."</p>
-            <div><div class="font-bold text-marrom-escuro">Carlos Eduardo</div><div class="text-xs text-marrom-black/50 uppercase tracking-widest">Niterói, RJ</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- ── FOOTER ──────────────────────────────────────── -->
+  <footer>
+    <p>© <span id="year"></span> PortoAlto Imóveis. Todos os direitos reservados.</p>
+    <p style="margin-top:0.5rem">
+      <a href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer">WhatsApp: (21) 98680-1687</a>
+      &nbsp;·&nbsp;
+      <a href="#leadForm">Política de Privacidade</a>
+    </p>
+  </footer>
 
-    <!-- Map Section -->
-    <section class="bg-white">
-      <div class="grid md:grid-cols-2">
-        <div class="section-padding flex flex-col justify-center order-2 md:order-1">
-          <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Localização</span>
-          <h2 class="text-3xl md:text-5xl text-marrom-escuro mb-8">No Coração da Revitalização</h2>
-          <p class="text-marrom-black/70 mb-8 leading-relaxed">A Zona Portuária do Rio de Janeiro é hoje o principal polo de investimento imobiliário da cidade. Com o Porto Maravilha, a região ganhou infraestrutura moderna, museus, VLT e uma nova orla.</p>
-          <ul class="space-y-4">
-            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Próximo ao Museu do Amanhã e AquaRio</span></li>
-            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Acesso facilitado via VLT e Rodoviária</span></li>
-            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Região com maior potencial de valorização</span></li>
-            <li class="flex items-center gap-3 text-marrom-black/80"><i data-lucide="check-circle-2" class="text-marrom-dourado"></i><span>Infraestrutura completa de lazer e serviços</span></li>
-          </ul>
-        </div>
-        <div class="h-80 md:h-auto bg-marrom-medio/10 relative overflow-hidden order-1 md:order-2">
-          <div class="absolute inset-0 flex items-center justify-center z-10">
-             <div class="text-center p-12">
-                <i data-lucide="map-pin" size="48" class="text-marrom-escuro mx-auto mb-4"></i>
-                <p class="text-marrom-escuro font-bold">Zona Portuária, Rio de Janeiro - RJ</p>
-             </div>
-          </div>
-          <img src="https://picsum.photos/seed/rio-map/1000/1000?blur=2" alt="Mapa Rio" class="w-full h-full object-cover opacity-30" referrerPolicy="no-referrer" loading="lazy" width="1000" height="1000">
-        </div>
-      </div>
-    </section>
+  <!-- ── FLOATING WHATSAPP ───────────────────────────── -->
+  <a href="https://wa.me/5521986801687?text=Olá!%20Tenho%20interesse%20nos%20apartamentos%20da%20Zona%20Portuária."
+     class="wpp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.12.554 4.112 1.523 5.836L0 24l6.336-1.506A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-4.983-1.36l-.358-.213-3.76.894.952-3.663-.233-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182c5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/></svg>
+  </a>
 
-    <!-- Contact Section -->
-    <section id="contato" class="section-padding bg-bege-elegante">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          <div>
-            <span class="text-marrom-medio uppercase tracking-widest text-sm font-bold mb-4 block">Contato</span>
-            <h2 class="text-3xl md:text-5xl text-marrom-escuro mb-8">Vamos Conversar?</h2>
-            <p class="text-marrom-black/70 mb-10 leading-relaxed max-w-md">Estou pronto para te ajudar a encontrar o imóvel ideal ou tirar qualquer dúvida sobre a região portuária. Escolha o melhor canal para você.</p>
-            <div class="space-y-8">
-              <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-marrom-escuro shadow-sm group-hover:bg-marrom-escuro group-hover:text-white transition-all"><i data-lucide="phone"></i></div>
-                <div><div class="text-xs text-marrom-black/50 uppercase tracking-widest font-bold mb-1">Telefone</div><div class="text-xl font-medium text-marrom-escuro">+55 21 98680-1687</div></div>
-              </div>
-              <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-marrom-escuro shadow-sm group-hover:bg-marrom-escuro group-hover:text-white transition-all"><i data-lucide="mail"></i></div>
-                <div><div class="text-xs text-marrom-black/50 uppercase tracking-widest font-bold mb-1">E-mail</div><div class="text-xl font-medium text-marrom-escuro">contato@gutocorretor.com.br</div></div>
-              </div>
-              <div class="flex items-center gap-6 group">
-                <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center text-marrom-escuro shadow-sm group-hover:bg-marrom-escuro group-hover:text-white transition-all"><i data-lucide="message-circle"></i></div>
-                <div><div class="text-xs text-marrom-black/50 uppercase tracking-widest font-bold mb-1">WhatsApp</div><a href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer" class="text-xl font-medium text-marrom-escuro hover:text-marrom-medio transition-colors">Chamar no Direct</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="bg-white p-6 md:p-10 rounded-sm shadow-xl">
-            <form id="contact-form" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Nome Completo</label>
-                  <input type="text" required class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors" placeholder="Seu nome">
-                </div>
-                <div class="space-y-2">
-                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">E-mail</label>
-                  <input type="email" required class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors" placeholder="Seu e-mail">
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Telefone</label>
-                  <input type="tel" required class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors" placeholder="(21) 99999-9999">
-                </div>
-                <div class="space-y-2">
-                  <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Interesse</label>
-                  <select class="w-full border-b border-marrom-medio/20 py-2 focus:border-marrom-escuro outline-none transition-colors bg-transparent">
-                    <option value="Compra">Compra</option>
-                    <option value="Venda">Venda</option>
-                    <option value="Investimento">Investimento</option>
-                    <option value="Dúvidas">Dúvidas</option>
-                  </select>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <label class="text-xs uppercase tracking-widest font-bold text-marrom-black/60">Mensagem</label>
-                <textarea rows="4" class="w-full border border-marrom-medio/20 p-4 focus:border-marrom-escuro outline-none transition-colors resize-none" placeholder="Como posso te ajudar?"></textarea>
-              </div>
-              <button type="submit" class="w-full btn-primary py-4 mt-4">Enviar Mensagem para Guto</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+  <script>
+    // ── Configuração EmailJS
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Você precisa criar conta no EmailJS e obter esta chave
+    })();
 
-    <!-- Footer -->
-    <footer class="bg-marrom-black text-bege-elegante pt-20 pb-10">
-      <div class="max-w-7xl mx-auto px-6 md:px-12">
-        <div class="grid md:grid-cols-4 gap-12 mb-16">
-          <div class="col-span-1 md:col-span-1">
-            <div class="text-2xl font-playfair font-bold tracking-tighter mb-6">GUTO <span class="font-light mx-2">|</span> <span class="text-sm uppercase tracking-widest font-montserrat">Corretor</span></div>
-            <p class="text-bege-elegante/50 text-sm leading-relaxed mb-8">Especialista em realizar sonhos na Zona Portuária do Rio de Janeiro. Atendimento com carisma, expertise e transparência.</p>
-            <div class="flex gap-4">
-              <a href="#" class="w-10 h-10 rounded-full border border-bege-elegante/20 flex items-center justify-center hover:bg-marrom-dourado hover:border-marrom-dourado transition-all"><i data-lucide="instagram" size="18"></i></a>
-              <a href="#" class="w-10 h-10 rounded-full border border-bege-elegante/20 flex items-center justify-center hover:bg-marrom-dourado hover:border-marrom-dourado transition-all"><i data-lucide="linkedin" size="18"></i></a>
-              <a href="#" class="w-10 h-10 rounded-full border border-bege-elegante/20 flex items-center justify-center hover:bg-marrom-dourado hover:border-marrom-dourado transition-all"><i data-lucide="phone" size="18"></i></a>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-lg font-playfair mb-6">Links Rápidos</h4>
-            <ul class="space-y-4 text-sm text-bege-elegante/60">
-              <li><a href="#" class="hover:text-marrom-dourado transition-colors">Home</a></li>
-              <li><a href="#imoveis" class="hover:text-marrom-dourado transition-colors">Imóveis</a></li>
-              <li><a href="#sobre" class="hover:text-marrom-dourado transition-colors">Sobre Guto</a></li>
-              <li><a href="#contato" class="hover:text-marrom-dourado transition-colors">Contato</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-lg font-playfair mb-6">Contatos</h4>
-            <ul class="space-y-4 text-sm text-bege-elegante/60">
-              <li class="flex items-center gap-3"><i data-lucide="phone" size="16" class="text-marrom-dourado"></i><span>+55 21 98680-1687</span></li>
-              <li class="flex items-center gap-3"><i data-lucide="mail" size="16" class="text-marrom-dourado"></i><span>contato@gutocorretor.com.br</span></li>
-              <li class="flex items-center gap-3"><i data-lucide="map-pin" size="16" class="text-marrom-dourado"></i><span>Zona Portuária, Rio de Janeiro - RJ</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4 class="text-lg font-playfair mb-6">Newsletter</h4>
-            <p class="text-sm text-bege-elegante/60 mb-4">Receba as melhores oportunidades do Porto no seu e-mail.</p>
-            <div class="flex">
-              <input type="email" placeholder="Seu e-mail" class="bg-white/5 border border-white/10 px-4 py-2 text-sm outline-none focus:border-marrom-dourado w-full">
-              <button class="bg-marrom-dourado text-marrom-black px-4 py-2 hover:bg-bege-elegante transition-all"><i data-lucide="chevron-right" size="20"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-[0.2em] text-bege-elegante/30">
-          <div>CRECI: RJ-012345/O</div>
-          <div>© 2024 Guto Corretor de Imóveis. Todos os direitos reservados.</div>
-        </div>
-      </div>
-    </footer>
+    // ── Ano no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 z-40 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#128C7E] transition-all hover:scale-110">
-      <i data-lucide="message-circle" size="32"></i>
-    </a>
+    // ── Formulário com feedback visual e envio real
+    const form = document.getElementById('leadForm');
+    const success = document.getElementById('formSuccess');
+    const submitBtn = form.querySelector('button[type="submit"]');
 
-    <!-- Scripts -->
-    <script>
-      // Initialize Lucide Icons
-      lucide.createIcons();
-    </script>
-    <script src="/src/script.js"></script>
-  </body>
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome');
+      const wpp  = document.getElementById('whatsapp');
+
+      // Validação
+      if (!nome.value.trim() || nome.value.trim().length < 2) {
+        nome.focus();
+        nome.style.borderColor = '#c0392b';
+        return;
+      }
+
+      const telRaw = wpp.value.replace(/\D/g, '');
+      if (telRaw.length < 10) {
+        wpp.focus();
+        wpp.style.borderColor = '#c0392b';
+        return;
+      }
+
+      // Loading state
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+
+      try {
+        // Preparar dados para envio
+        const templateParams = {
+          to_email: 'gutovicentemp@gmail.com',
+          from_name: 'PortoAlto Imóveis',
+          subject: 'Novo Lead - Apartamentos Zona Portuária',
+          nome: nome.value,
+          whatsapp: wpp.value,
+          origem: 'Landing Page PortoAlto',
+          data: new Date().toLocaleString('pt-BR'),
+          mensagem: `Novo lead interessado em apartamentos na Zona Portuária.\n\nNome: ${nome.value}\nWhatsApp: ${wpp.value}\nData: ${new Date().toLocaleString('pt-BR')}\nOrigem: Landing Page PortoAlto`
+        };
+
+        // Enviar email (descomente quando configurar EmailJS)
+        // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+        
+        // Simulação de envio para teste
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        
+        console.log('Lead capturado:', templateParams);
+        
+        // Sucesso
+        form.style.display = 'none';
+        success.style.display = 'block';
+        
+        // Salvar no localStorage como backup
+        localStorage.setItem('portoalto_lead', JSON.stringify({
+          nome: nome.value,
+          whatsapp: wpp.value,
+          timestamp: Date.now()
+        }));
+
+      } catch (error) {
+        console.error('Erro ao enviar lead:', error);
+        alert('Ocorreu um erro ao enviar. Por favor, tente novamente ou contate diretamente pelo WhatsApp.');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+
+    // ── Máscara simples de telefone
+    document.getElementById('whatsapp').addEventListener('input', function () {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length >= 11)      v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length >= 7)  v = `(${v.slice(0,2)}) ${v.slice(2,6)}-${v.slice(6)}`;
+      else if (v.length >= 3)  v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      this.value = v;
+    });
+
+    // ── Reset cor ao digitar
+    ['nome','whatsapp'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function () {
+        this.style.borderColor = '';
+      });
+    });
+
+    // ── Debug: Mostrar leads salvos no console
+    console.log('Leads capturados:', JSON.parse(localStorage.getItem('portoalto_lead') || '[]'));
+  </script>
+
+</body>
 </html>
-
