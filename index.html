@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   
   <!-- EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Preload Hero -->
   <link rel="preload" as="image" href="./assets/6812713176b8b-mobile.webp" media="(max-width:768px)">
   <link rel="preload" as="image" href="./assets/6812713176b8b-desktop.webp" media="(min-width:769px)">
@@ -1088,8 +1088,8 @@
           mensagem: `Novo lead interessado em apartamentos na Zona Portuária.\n\nNome: ${nome.value}\nWhatsApp: ${wpp.value}\nData: ${new Date().toLocaleString('pt-BR')}\nOrigem: Landing Page PortoAlto`
         };
 
-        // Enviar email (descomente quando configurar EmailJS)
-        // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+        Enviar email (descomente quando configurar EmailJS)
+        await emailjs.send('service_160gb59', 'template_g3c552j', templateParams);
         
         // Simulação de envio para teste
         await new Promise(resolve => setTimeout(resolve, 2000));
