@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   
   <!-- EmailJS -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Preload Hero -->
   <link rel="preload" as="image" href="./assets/6812713176b8b-mobile.webp" media="(max-width:768px)">
   <link rel="preload" as="image" href="./assets/6812713176b8b-desktop.webp" media="(min-width:769px)">
@@ -970,7 +970,7 @@
             </div>
             <div class="contact-item">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>guto@portoalto.com.br</span>
+              <span>Gutovicentemp@gmail.com</span>
             </div>
           </div>
         </div>
@@ -1019,7 +1019,7 @@
 
   <!-- ── FOOTER ──────────────────────────────────────── -->
   <footer>
-    <p>© <span id="year"></span> PortoAlto Imóveis. Todos os direitos reservados.</p>
+    <p>© <span id="year"></span> Guto PortoAlto. Todos os direitos reservados.</p>
     <p style="margin-top:0.5rem">
       <a href="https://wa.me/5521986801687" target="_blank" rel="noopener noreferrer">WhatsApp: (21) 98680-1687</a>
       &nbsp;·&nbsp;
@@ -1085,7 +1085,7 @@
           message: `Novo lead interessado em apartamentos na Zona Portuária.\n\nNome: ${nome.value}\nWhatsApp: ${wpp.value}\nData: ${new Date().toLocaleString('pt-BR')}\nOrigem: Landing Page PortoAlto`
         };
 
-        // Enviar email com suas credenciais
+// Enviar email com suas credenciais
         await emailjs.send("service_160gb59", "template_l59z89x", templateParams);
         
         console.log('Lead enviado com sucesso:', templateParams);
