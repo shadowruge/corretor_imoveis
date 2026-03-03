@@ -1039,7 +1039,7 @@
   <script>
     // ── Configuração EmailJS
     (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); // Você precisa criar conta no EmailJS e obter esta chave
+      emailjs.init("icvj2YzkPaR43NjMq"); // Você precisa criar conta no EmailJS e obter esta chave
     })();
 
     // ── Ano no footer
@@ -1078,23 +1078,17 @@
       try {
         // Preparar dados para envio
         const templateParams = {
-          to_email: 'gutovicentemp@gmail.com',
-          from_name: 'PortoAlto Imóveis',
+          name: nome.value,
+          email: 'gutovicentemp@gmail.com', // Email do corretor
           subject: 'Novo Lead - Apartamentos Zona Portuária',
-          nome: nome.value,
-          whatsapp: wpp.value,
-          origem: 'Landing Page PortoAlto',
-          data: new Date().toLocaleString('pt-BR'),
-          mensagem: `Novo lead interessado em apartamentos na Zona Portuária.\n\nNome: ${nome.value}\nWhatsApp: ${wpp.value}\nData: ${new Date().toLocaleString('pt-BR')}\nOrigem: Landing Page PortoAlto`
+          tel: wpp.value.replace(/\D/g, ''), // Apenas números
+          message: `Novo lead interessado em apartamentos na Zona Portuária.\n\nNome: ${nome.value}\nWhatsApp: ${wpp.value}\nData: ${new Date().toLocaleString('pt-BR')}\nOrigem: Landing Page PortoAlto`
         };
 
-        // Enviar email (descomente quando configurar EmailJS)
-        // await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+        // Enviar email com suas credenciais
+        await emailjs.send("service_160gb59", "template_l59z89x", templateParams);
         
-        // Simulação de envio para teste
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        console.log('Lead capturado:', templateParams);
+        console.log('Lead enviado com sucesso:', templateParams);
         
         // Sucesso
         form.style.display = 'none';
